@@ -14,20 +14,24 @@ Browser back/forward buttons also work properly.
 
 1. Setting Initial State:
 
+```
 const initialQuery = urlParams.get("q") || "";
 const initialPage = parseInt(urlParams.get("page")) || 1;
+```
 
 Reads the query and page number from the URL when the page first loads.
 
 If nothing is there, starts fresh.
 
 2. States:
-
+```
 const [query, setQuery] = useState(initialQuery);
 const [currentPage, setCurrentPage] = useState(initialPage);
 const [results, setResults] = useState([]);
 const [totalResults, setTotalResults] = useState(0);
 const [loading, setLoading] = useState(false);
+```
+
 
 Keeps track of:
 
