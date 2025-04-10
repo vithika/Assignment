@@ -112,6 +112,6 @@ Test Simple Meaning
 3. Renders search input and button- Checks if the search input box and the search button are on the screen when the app first loads.
 4. Allows typing in search input - Makes sure when a user types something into the search box, the text appears correctly.
 5. Restores search on browser back button - Tests that if the user presses the browser back button, the app updates the search and shows new results properly (simulates going back in history).
-
-In short:
-👉 The tests check that the search bar works, results show correctly, empty search is handled, typing is allowed, pagination shows up, and the app handles browser navigation properly.
+   ![alt text](image.png)
+   In short:
+   👉 The tests check that the search bar works, results show correctly, empty search is handled, typing is allowed, pagination shows up, and the app handles browser navigation properly.
