@@ -1,5 +1,5 @@
 ![alt text](<Screenshot 2025-04-10 at 8.54.41 PM.png>) ![alt text](<Screenshot 2025-04-10 at 8.54.48 PM.png>) ![alt text](<Screenshot 2025-04-10 at 8.54.58 PM.png>)
-🌟 ## What This App Does:
+## What This App Does:
 It lets users search products (from a fake online API).
 
 It shows matching products with pagination (10 products per page).
@@ -10,7 +10,7 @@ URL changes based on your search and page.
 
 Browser back/forward buttons also work properly.
 
-🛠️ ## How It Works:
+## How It Works:
 
 1. Setting Initial State:
 
@@ -35,31 +35,34 @@ const [loading, setLoading] = useState(false);
 
 Keeps track of:
 
-What the user is typing (query)
+- What the user is typing (query)
 
-Which page they're on (currentPage)
+- Which page they're on (currentPage)
 
-List of products found (results)
+- List of products found (results)
 
-Total number of results (totalResults)
+- Total number of results (totalResults)
 
-If data is still loading (loading)
+- If data is still loading (loading)
 
-3. Fetching Products:
+## 3. Fetching Products:
 
+```
 const fetchData = async (q, page) => { ... }
+```
 
-Calls a fake API.
 
-Filters products by search term.
+- Calls a fake API.
 
-Slices the results for the current page (10 products per page).
+- Filters products by search term.
 
-4. Updating the URL:
-   javascript
-   Copy
-   Edit
-   const updateURL = (q, page) => { ... }
+- Slices the results for the current page (10 products per page).
+
+## 4. Updating the URL:
+  
+  ```
+ const updateURL = (q, page) => { ... }
+```
    Changes the URL when you search or move between pages.
 
 Example: ?q=phone&page=2
@@ -67,47 +70,48 @@ Example: ?q=phone&page=2
 Helps with bookmarking or sharing.
 
 5. Handling User Actions:
-   Search:
+  ##### Search:
 
-handleSearch submits the form.
+- handleSearch submits the form.
 
-Updates the page to 1.
+- Updates the page to 1.
 
-Updates the URL and fetches new results.
+- Updates the URL and fetches new results.
 
-Clear:
+##### Clear:
 
-handleClear empties the search box.
+- handleClear empties the search box.
 
-Resets everything.
+- Resets everything.
 
-Pagination (Page Change):
+#### Pagination (Page Change):
 
-handlePageChange moves you to a new page and fetches that page's results.
+- handlePageChange moves you to a new page and fetches that page's results.
 
-Back/Forward Buttons:
+### Back/Forward Buttons:
 
-javascript
-Copy
-Edit
+
+```
 window.onpopstate = (event) => { ... }
+```
 
-Detects when users click the browser's Back or Forward.
+- Detects when users click the browser's Back or Forward.
 
-Updates the page and search automatically based on URL
+- Updates the page and search automatically based on URL
 
-6. UI Components:
-   Search Bar with a Clear (X) button inside it.
+### 6. UI Components:
 
-Loading Spinner when data is being fetched.
+- Search Bar with a Clear (X) button inside it.
 
-List of Products (if any found).
+- Loading Spinner when data is being fetched.
 
-Pagination Controls (Prev ⬅️, Page Numbers, Next ➡️).
+- List of Products (if any found).
 
-No results message if nothing matches.
+- Pagination Controls (Prev ⬅️, Page Numbers, Next ➡️).
 
-Tests
+- No results message if nothing matches.
+
+### Tests
 
 
 
