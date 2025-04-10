@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+![alt text](<Screenshot 2025-04-10 at 8.54.41 PM.png>) ![alt text](<Screenshot 2025-04-10 at 8.54.48 PM.png>) ![alt text](<Screenshot 2025-04-10 at 8.54.58 PM.png>)
+🌟 ## What This App Does:
+It lets users search products (from a fake online API).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It shows matching products with pagination (10 products per page).
 
-## Available Scripts
+Clearing the search resets everything.
 
-In the project directory, you can run:
+URL changes based on your search and page.
 
-### `npm start`
+Browser back/forward buttons also work properly.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🛠️ ## How It Works:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Setting Initial State:
 
-### `npm test`
+const initialQuery = urlParams.get("q") || "";
+const initialPage = parseInt(urlParams.get("page")) || 1;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Reads the query and page number from the URL when the page first loads.
 
-### `npm run build`
+If nothing is there, starts fresh.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. States:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+const [query, setQuery] = useState(initialQuery);
+const [currentPage, setCurrentPage] = useState(initialPage);
+const [results, setResults] = useState([]);
+const [totalResults, setTotalResults] = useState(0);
+const [loading, setLoading] = useState(false);
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Keeps track of:
 
-### `npm run eject`
+What the user is typing (query)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Which page they're on (currentPage)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+List of products found (results)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Total number of results (totalResults)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+If data is still loading (loading)
 
-## Learn More
+3. Fetching Products:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+const fetchData = async (q, page) => { ... }
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Calls a fake API.
 
-### Code Splitting
+Filters products by search term.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Slices the results for the current page (10 products per page).
 
-### Analyzing the Bundle Size
+4. Updating the URL:
+   javascript
+   Copy
+   Edit
+   const updateURL = (q, page) => { ... }
+   Changes the URL when you search or move between pages.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Example: ?q=phone&page=2
 
-### Making a Progressive Web App
+Helps with bookmarking or sharing.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+5. Handling User Actions:
+   Search:
 
-### Advanced Configuration
+handleSearch submits the form.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Updates the page to 1.
 
-### Deployment
+Updates the URL and fetches new results.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Clear:
 
-### `npm run build` fails to minify
+handleClear empties the search box.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Resets everything.
+
+Pagination (Page Change):
+
+handlePageChange moves you to a new page and fetches that page's results.
+
+Back/Forward Buttons:
+
+javascript
+Copy
+Edit
+window.onpopstate = (event) => { ... }
+
+Detects when users click the browser's Back or Forward.
+
+Updates the page and search automatically based on URL
+
+6. UI Components:
+   Search Bar with a Clear (X) button inside it.
+
+Loading Spinner when data is being fetched.
+
+List of Products (if any found).
+
+Pagination Controls (Prev ⬅️, Page Numbers, Next ➡️).
+
+No results message if nothing matches.
+
+Tests
+
+Test Simple Meaning
+
+1. Handles page change - After typing a search and clicking the search button, it checks if page numbers (pagination) appear.
+2. Shows no results when empty - If no products are found (empty result from API), it should display “No results found.”
+3. Renders search input and button- Checks if the search input box and the search button are on the screen when the app first loads.
+4. Allows typing in search input - Makes sure when a user types something into the search box, the text appears correctly.
+5. Restores search on browser back button - Tests that if the user presses the browser back button, the app updates the search and shows new results properly (simulates going back in history).
+
+In short:
+👉 The tests check that the search bar works, results show correctly, empty search is handled, typing is allowed, pagination shows up, and the app handles browser navigation properly.
