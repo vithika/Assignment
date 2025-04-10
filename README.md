@@ -129,5 +129,8 @@ window.onpopstate = (event) => { ... }
 4. Allows typing in search input - Makes sure when a user types something into the search box, the text appears correctly.
 5. Restores search on browser back button - Tests that if the user presses the browser back button, the app updates the search and shows new results properly (simulates going back in history).
 
+<img width="490" alt="Screenshot 2025-04-10 at 9 58 54 PM" src="https://github.com/user-attachments/assets/c09f4e2b-8d0a-4986-92da-5940d6ef7154" />
+
+
 In short:
 👉 The tests check that the search bar works, results show correctly, empty search is handled, typing is allowed, pagination shows up, and the app handles browser navigation properly.
