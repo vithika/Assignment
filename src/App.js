@@ -7,7 +7,7 @@ import {
   InputAdornment,
   IconButton,
 } from "@mui/material";
-import ClearIcon from "@mui/icons-material/Clear"; // Import Clear icon
+import ClearIcon from "@mui/icons-material/Clear";
 import "./App.css";
 
 function App() {
@@ -22,6 +22,8 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const no_Of_pages = Math.ceil(totalResults / 10);
+
+  /*---Fetch data from dummyJson search API ------*/
 
   const fetchData = async (q, page) => {
     setLoading(true);
@@ -45,25 +47,28 @@ function App() {
       setLoading(false);
     }
   };
-
+  /*------ Update the URL according to the current page ------*/
   const updateURL = (q, page) => {
     const newUrl = `?q=${encodeURIComponent(q)}&page=${page}`;
     window.history.pushState({ q, page }, "", newUrl);
   };
 
+  /*-- Function to search data from API,it sets the current page,fetch data and updates URL ------*/
   const handleSearch = (e) => {
     e.preventDefault();
     setCurrentPage(1);
     updateURL(query, 1);
     fetchData(query, 1);
   };
-
+  /* This function clears the query , resets the current page ,updates the URL and fetch all data"----*/
   const handleClear = () => {
     setQuery("");
     setCurrentPage(1);
     updateURL("", 1);
     fetchData("", 1);
   };
+
+  /*This function handles Page change and updates the data accordingly ------*/
   const handlePageChange = (page) => {
     setCurrentPage(page);
     updateURL(query, page);
