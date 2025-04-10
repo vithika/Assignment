@@ -109,7 +109,7 @@ No results message if nothing matches.
 
 Tests
 
-Test Simple Meaning
+
 
 1. Handles page change - After typing a search and clicking the search button, it checks if page numbers (pagination) appear.
 2. Shows no results when empty - If no products are found (empty result from API), it should display “No results found.”
