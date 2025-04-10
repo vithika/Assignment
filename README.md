@@ -1,10 +1,21 @@
+
+
+### SEARCH WITH PAGINATION
+
 ### RECORDING OF THE WHOLE FUNCTIONALITY
 
-https://github.com/user-attachments/assets/3a16e57b-3fd9-4b00-8449-beb96a957ae3
+
+
+https://github.com/user-attachments/assets/cb797992-f73d-428b-a5e7-b4977cad2d75
+
+
 
 ### SCREENSHOTS
 
-![alt text](<Screenshot 2025-04-10 at 8.54.41 PM.png>) ![alt text](<Screenshot 2025-04-10 at 8.54.48 PM.png>) ![alt text](<Screenshot 2025-04-10 at 8.54.58 PM.png>)
+<img width="1440" alt="Screenshot 2025-04-10 at 10 18 11 PM" src="https://github.com/user-attachments/assets/b22fea59-ede5-40d1-97f1-8c9ea8691faa" />
+<img width="1440" alt="Screenshot 2025-04-10 at 10 17 58 PM" src="https://github.com/user-attachments/assets/6790e07e-8800-4e8a-976c-bda60e2c9457" />
+<img width="1440" alt="Screenshot 2025-04-10 at 10 18 15 PM" src="https://github.com/user-attachments/assets/ce7ae441-49c7-407d-9c12-d59f8b5a7757" />
+
 
 ## What This App Does:
 
