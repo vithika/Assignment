@@ -3,11 +3,14 @@
 padding: 20px
 }
 .page_no{
-  padding: 4px;
-  margin: 2px;
-  border: 1px solid black;
-  cursor:pointer
+  cursor: pointer; 
 }
 .active{
   background-color: aqua;
+}
+
+button{
+  padding: 4px;
+  margin: 2px;
+  border: 1px solid black;
 }

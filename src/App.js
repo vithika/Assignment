@@ -8,6 +8,7 @@ import {
   IconButton,
 } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear"; // Import Clear icon
+import "./App.css";
 
 function App() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -128,7 +129,7 @@ function App() {
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((prev) => prev - 1)}
             >
-              ☚
+              {"<"}
             </button>
             {[...Array(no_Of_pages).keys()].map((n) => (
               <button
@@ -145,8 +146,7 @@ function App() {
               disabled={currentPage === no_Of_pages}
               onClick={() => setCurrentPage((prev) => prev + 1)}
             >
-              {" "}
-              ☛
+              {">"}
             </button>
           </div>
         </>
