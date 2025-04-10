@@ -19,15 +19,15 @@ https://github.com/user-attachments/assets/cb797992-f73d-428b-a5e7-b4977cad2d75
 
 ## What This App Does:
 
-It lets users search products (from a fake online API).
+- It lets users search products (from a fake online API).
 
-It shows matching products with pagination (10 products per page).
+- It shows matching products with pagination (10 products per page).
 
-Clearing the search resets everything.
+- Clearing the search resets everything.
 
-URL changes based on your search and page.
+- URL changes based on your search and page.
 
-Browser back/forward buttons also work properly.
+- When the user hits the browser back button, they are taken back to their previous query.
 
 ## How It Works:
 
