@@ -1,3 +1,11 @@
+
+### RECORDING OF THE WHOLE FUNCTIONALITY
+
+https://github.com/user-attachments/assets/3a16e57b-3fd9-4b00-8449-beb96a957ae3
+
+### SCREENSHOTS
+
+
 ![alt text](<Screenshot 2025-04-10 at 8.54.41 PM.png>) ![alt text](<Screenshot 2025-04-10 at 8.54.48 PM.png>) ![alt text](<Screenshot 2025-04-10 at 8.54.58 PM.png>)
 ## What This App Does:
 It lets users search products (from a fake online API).
