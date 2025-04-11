@@ -88,7 +88,7 @@ Example: ?q=phone&page=2
 
 Helps with bookmarking or sharing.
 
-5. Handling User Actions:
+### 5. Handling User Actions:
 
 ##### Search:
 
